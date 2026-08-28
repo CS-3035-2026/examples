@@ -10,8 +10,6 @@ let counter = 0;
 
 // create widgets
 const root = new SKContainer({
-  x: 10,
-  y: 10,
   width: 300,
   height: 300,
 });
@@ -42,7 +40,7 @@ root.addChild(clearButton);
 // set up event listeners
 increaseButton.addEventListener("action", (e) => {
   console.log("incrementButton action!");
-  counter++;
+  counter++; 
   textfield.text = counter.toString();
 });
 
@@ -52,9 +50,9 @@ clearButton.addEventListener("action", (e) => {
   textfield.text = counter.toString();
 });
 
-textfield.addEventListener("textchanged", (e) => {
+textfield.addEventListener("input", (e) => {
   const tf = e.source as SKTextfield;
-  console.log(`textfield textchanged '${tf.text}'`);
+  console.log(`textfield input '${tf.text}'`);
   tf.text = tf.text.replace(/[^0-9]/g, ""); // simple text validation
   counter = parseInt(tf.text) || 0; // convert to number for counter
 });
