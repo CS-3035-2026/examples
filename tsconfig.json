@@ -12,6 +12,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "widget": ["simplekit/src/widget"],
+      "widget/element": ["simplekit/src/widget/element"]
+    },
 
     /* Linting */
     "strict": true,
