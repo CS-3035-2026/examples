@@ -8,7 +8,7 @@ Subdirectories contain each example.
 
 Do the following in a Terminal:
  - Clone the repo.
-   - `git clone https://github.com/CS-3035-2025/examples.git`
+   - `git clone https://github.com/CS-3035-2026/examples.git`
  - Install simplekit as a submodule
    - `git submodule init`
    - `git submodule update`
