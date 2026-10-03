@@ -65,7 +65,7 @@ function pathDemo(gc: CanvasRenderingContext2D) {
   // circle using ellipse
   gc.strokeStyle = "blue";
   gc.beginPath();
-  gc.ellipse(200, 30, 25, 25, 0, 0, 2 * Math.PI);
+  gc.ellipse(200, 30, 25, 25, 0, 0, 2* Math.PI);
   gc.stroke();
 
   // circle using arc
@@ -133,11 +133,13 @@ function textDemo(gc: CanvasRenderingContext2D) {
 //#region colourDemo
 
 function colourDemo(gc: CanvasRenderingContext2D) {
+  gc.save();
   for (let i = 0; i < 10; i++) {
     const h = Math.random() * 360;
     gc.fillStyle = `hsl(${h}deg 80% 50%)`;
-    gc.fillRect(i * 20, 20, 20, 20);
+    gc.fillRect(i * 20, 20, 20, 20);  
   }
+  gc.restore();
 }
 
 //#endregion

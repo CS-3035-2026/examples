@@ -12,8 +12,9 @@ const label = new SKLabel({
   y: 50,
 });
 // can change other properties
-// label.width = 200;
-// label.align = "right";
+label.width = 200;
+// label.height = 200;
+label.align = "right";
 
 setSKDrawCallback((gc) => {
   gc.clearRect(0, 0, gc.canvas.width, gc.canvas.height);

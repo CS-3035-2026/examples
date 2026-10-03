@@ -11,6 +11,7 @@ const panelHeight = 220;
 
 // Creating the root element with a grey background. No layout has been set, default is fixed
 const root = new SKContainer();
+root.layoutMethod = new Layout.CentredLayout
 root.fill = "lightgrey";
 
 

@@ -10,7 +10,7 @@ import {
 
 const root = new SKContainer();
 root.id = "ROOT";
-root.fill = "green";
+root.fill = "lightblue";
 root.debug = true;
 root.padding = 10;
 console.log(`root: ${root.debug}`);
