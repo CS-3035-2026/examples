@@ -1,30 +1,27 @@
-import { Subscriber } from "./subscriber";
+import { Observer } from "./observer";
 
 export class Model{
 
     private _count:number = 0;
-    private subscribers: Subscriber[] = [];
-
+    private observers: Observer[] = [];
 
     get count(){
         return this._count;
     }
 
-
     set count(c: number){
        this._count = c;
-       this.notifySubscribers();
+       this.notifyObservers();
     }
 
-
-    public addSubscriber(s: Subscriber): void{
-        this.subscribers.push(s);
-        this.notifySubscribers();
+    public addObserver(o: Observer): void{
+        this.observers.push(o);
+        this.notifyObservers();
     }
 
     
-    private notifySubscribers(): void{
-        this.subscribers.forEach(subscriber => subscriber.update()); // Call update function for all subscribers
+    private notifyObservers(): void{
+        this.observers.forEach(observer => observer.update()); // Call update function for all observers
     }
 
 }
