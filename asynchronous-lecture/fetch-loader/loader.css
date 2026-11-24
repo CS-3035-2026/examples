@@ -1,0 +1,39 @@
+/*
+ * A simple busy indicator ("loader") made with CSS only:
+ *  - CSS variables set its size, colours and speed
+ *  - rounded corners (border-radius: 50%) turn a square border into a circle
+ *  - one side of the border has a different colour, and a CSS
+ *    animation rotates the whole element to make it spin
+ *
+ * Use it with: <div class="loader"></div>
+ * More examples: https://github.com/vineethtrv/css-loader
+ */
+.loader {
+  --size: 40px;
+  --thickness: 5px;
+  --track-colour: lightgrey;
+  --spinner-colour: red;
+  --speed: 1s;
+
+  width: var(--size);
+  height: var(--size);
+  margin: 20px;
+  border: var(--thickness) solid var(--track-colour);
+  border-top-color: var(--spinner-colour);
+  border-radius: 50%;
+  animation: spin var(--speed) linear infinite;
+}
+
+/* the hidden attribute has to win over display set by other rules */
+.loader[hidden] {
+  display: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

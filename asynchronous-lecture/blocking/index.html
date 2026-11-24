@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blocking</title>
+    <style>
+      body > div {
+        margin: 8px 0;
+      }
+      textarea {
+        width: 400px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="count">Number of primes:</label>
+      <input id="count" type="number" value="1000000" min="1" />
+      <button id="generate">Generate</button>
+      <button id="cancel" disabled>Cancel</button>
+    </div>
+    <div id="output"></div>
+    <div>
+      <textarea placeholder='Try typing here immediately after pressing "Generate"'></textarea>
+    </div>
+    <div><button id="reload">Reload</button></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

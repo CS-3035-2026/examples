@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch (with loader)</title>
+    <link rel="stylesheet" href="./loader.css" />
+    <style>
+      #output {
+        font-family: monospace;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <select id="url">
+        <option>https://pokeapi.co/api/v2/pokemon?limit=100000&amp;offset=0</option>
+        <option>https://pokeapi.co/api/v2/pokemon/pikachu</option>
+        <option>https://pokeapi.co/api/v2/pokemon/not-a-pokemon</option>
+        <option>https://not-a-real-server.invalid/</option>
+      </select>
+      <button id="fetch">Fetch</button>
+    </div>
+    <!-- the busy indicator, hidden until a fetch starts -->
+    <div id="loader" class="loader" hidden></div>
+    <div id="output"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
