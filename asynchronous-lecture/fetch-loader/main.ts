@@ -5,8 +5,12 @@
  * when the fetch starts and hidden when it is done, whether it
  * succeeded or failed.
  *
- * Use network throttling in the developer tools (Network tab, "Slow 4G"
- * or "3G") to see the loader for longer.
+ * To see the loader for longer, pick httpbin delay/3 (it waits 3 seconds
+ * before it answers), or use network throttling in the developer tools
+ * (Network tab, "Slow 4G" or "3G").
+ *
+ * cache: "no-store" stops the browser using a saved copy, so every fetch
+ * goes to the network.
  */
 
 const urlSelect = document.getElementById("url") as HTMLSelectElement;
@@ -21,7 +25,7 @@ async function doFetch(url: string) {
   output.textContent = "";
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`HTTP status ${response.status}`);
     }

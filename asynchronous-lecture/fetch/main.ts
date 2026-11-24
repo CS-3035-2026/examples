@@ -5,9 +5,16 @@
  *  - fetch() returns a Promise right away, so the UI stays responsive
  *  - use network throttling in the developer tools (Network tab,
  *    "Slow 4G" or "3G") to simulate a slow connection
+ *  - cache: "no-store" stops the browser using a saved copy, so every
+ *    fetch goes to the network (otherwise a second fetch of the same
+ *    URL can be instant). The "Disable cache" checkbox in the developer
+ *    tools Network tab does the same thing while the tools are open.
  *  - doFetch1() uses Promises: fetch() with chained .then( ... ) and
  *    .catch( ... ) for error handling
  *  - doFetch2() does the same thing with async/await
+ *
+ * Slower URLs in the list: jsonplaceholder photos is about 1 MB, and
+ * httpbin delay/3 waits 3 seconds before it answers.
  *
  * The last two URLs in the list show the two kinds of error:
  *  - the server answers with an error (404): the Promise still resolves,
@@ -22,7 +29,7 @@ const output = document.getElementById("output") as HTMLDivElement;
 // using Promises: each .then( ... ) gets the result of the step before
 function doFetch1(url: string) {
   console.log("doFetch1 start");
-  fetch(url)
+  fetch(url, { cache: "no-store" })
     .then((response) => {
       console.log("response", response.status);
       if (!response.ok) {
@@ -47,7 +54,7 @@ function doFetch1(url: string) {
 async function doFetch2(url: string) {
   console.log("doFetch2 start");
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: "no-store" });
     console.log("response", response.status);
     if (!response.ok) {
       throw new Error(`HTTP status ${response.status}`);
