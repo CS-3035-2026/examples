@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "htm": "^3.1.1",
+    "preact": "^10.29.8",
     "simplekit": "file:../simplekit"
   },
   "devDependencies": {

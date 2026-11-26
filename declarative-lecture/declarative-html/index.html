@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>declarative-html</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!--
+      declarative-html: the HTML markup describes WHAT the UI tree is,
+      and the event handler is declared as an attribute
+    -->
+    <div class="container">
+      <p id="label">???</p>
+      <button onClick="setClicked(true)">Ok</button>
+    </div>
+
+    <!--
+      a classic script (not type="module"), so setClicked is a global
+      function that the onClick attribute above can call
+    -->
+    <script>
+      // state
+      let clicked = false;
+      function setClicked(value) {
+        clicked = value;
+        update();
+      }
+
+      // when state changes, update the app
+      // (but this update code is imperative)
+      function update() {
+        document.querySelector("p#label").innerText =
+          clicked ? "CLICKED" : "declarative-html";
+      }
+
+      // initial render
+      update();
+    </script>
+  </body>
+</html>

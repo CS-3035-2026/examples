@@ -1,0 +1,12 @@
+{
+  /*
+   * JSX and Preact settings: compile JSX in .tsx files into calls to
+   * Preact's jsx() function (the rest comes from the main tsconfig.json)
+   */
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "include": ["."]
+}

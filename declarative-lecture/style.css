@@ -1,0 +1,15 @@
+/* shared style for all of the declarative lecture demos */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid grey;
+  background-color: whitesmoke;
+}
+
+button {
+  min-width: 50px;
+}
