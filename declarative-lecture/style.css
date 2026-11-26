@@ -3,11 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 140px;
+  width: 220px;
   margin: 10px auto;
   padding: 10px;
   border: 1px solid grey;
   background-color: whitesmoke;
+  /* keep the label on one line */
+  white-space: nowrap;
 }
 
 button {
